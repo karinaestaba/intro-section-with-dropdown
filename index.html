@@ -15,18 +15,22 @@
       <img src="assets/images/logo.svg" alt="Snap" width="82">
     </figure>
 
-    <span class="main-menu">
-      <img src="assets/images/icon-menu.svg" alt="Toggle menu" width="30">
-    </span>
+    <a href="#!" class="main-menu-open" id="main-menu-open">
+      <img src="assets/images/icon-menu.svg" alt="Open menu" width="30">
+    </a>
 
-    <nav class="main-nav">
+    <nav class="main-menu-container">
+      <a href="#!" class="main-menu-close" id="main-menu-close">
+        <img src="assets/images/icon-close-menu.svg" alt="Close menu" width="25">
+      </a>
+
       <ul class="main-menu">
         <li>
           <a href="#!" class="menu-title">Features</a>
           <ul class="submenu">
             <li>
               <a href="#!">
-                <img src="assets/images/icon-planning.svg" alt="" class="icon" width="20">
+                <img src="assets/images/icon-todo.svg" alt="" class="icon" width="20">
                 <span class="title">Todo list</span>
               </a>
             </li>
@@ -95,6 +99,8 @@
         </li>
       </ul>
     </nav>
+
+    <div class="overlay-menu"></div>
   </header>
 
   <main class="main-content">

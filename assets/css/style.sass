@@ -28,12 +28,19 @@ body
   color: $medium_gray
   background-color: $almost_white
 
+a
+  &.btn-login
+    padding: 10px 20px
+    border: 2px solid $medium_gray
+    display: block
+    border-radius: 15px
+
+.overlay-menu
+  display: none
+
 .main
   &-header, &-content
     max-width: 1220px
-
-  &-nav
-    display: none
 
   &-header
     display: flex
@@ -44,6 +51,96 @@ body
     .logo
       img
         display: block
+
+  &-menu
+    &-close
+      align-self: end
+
+    &-container
+      display: none
+      left: 200%
+
+      flex-direction: column
+      gap: 20px
+      width: 70%
+      height: 100vh
+      background: white
+      position: fixed
+      top: 0
+      padding: 20px
+      z-index: 1
+
+      ul
+        list-style: none
+        display: flex
+        flex-direction: column
+        gap: 10px
+
+        &.main-menu
+          gap: 20px
+
+        &.menu-access
+          text-align: center
+          gap: 20px
+
+        &.submenu
+          display: none
+          padding-left: 30px
+          padding-top: 20px
+          gap: 20px
+          
+          a
+            display: flex
+            gap: 15px
+            align-items: center
+
+          .title
+            display: block
+
+          img
+            display: block
+
+      li
+        font-size: 16px
+
+      a
+        display: block
+        text-decoration: none
+        color: $medium_gray
+
+    &-open
+      &:focus
+        background: red
+
+        ~ .main-menu-container
+          left: auto
+          right: 0
+          display: flex
+
+        ~ .overlay-menu
+          display: block
+          width: 100vw
+          height: 100vh
+          position: fixed
+          background: black
+          opacity: .8
+          top: 0
+          bottom: 0
+          right: 0
+          z-index: -1
+
+.menu-title
+  &::after
+    content: url('../images/icon-arrow-down.svg')
+    margin-left: 10px
+
+  &:focus
+    &::after
+      content: url('../images/icon-arrow-up.svg')
+
+    + .submenu
+      display: flex
+    
 
 .banner
   img
