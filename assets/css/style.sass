@@ -1,0 +1,92 @@
+$almost_white: hsl(0, 0%, 98%)
+$medium_gray: hsl(0, 0%, 41%)
+$almost_black: hsl(0, 0%, 8%)
+$font_size: 18px
+$font_family: 'Epilogue', sans-serif
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  outline: 0
+
+  &::after, &::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    outline: 0
+    
+html,
+body
+  min-height: 100vh
+
+body
+  font-family: $font_family
+  font-size: $font_size
+  line-height: 24px
+  line-height: 1.2
+  color: $medium_gray
+  background-color: $almost_white
+
+.main
+  &-header, &-content
+    max-width: 1220px
+
+  &-nav
+    display: none
+
+  &-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+
+    .logo
+      img
+        display: block
+
+.banner
+  img
+    display: block
+    width: 100%
+    max-height: 40vh
+    object-fit: cover
+
+.hero
+  padding: 40px 20px
+  text-align: center
+
+  h1
+    font-size: 35px
+    line-height: 51px
+    margin-top: 9px
+    margin-bottom: 12px
+    color: $almost_black
+    font-weight: 700
+
+  p
+    margin-bottom: 23px
+    font-size: 16px
+    line-height: 26px
+
+  .cta-button
+    display: inline-block
+    background-color: $almost_black
+    color: white
+    padding: 15px
+    font-weight: 700
+    text-decoration: none
+    border-radius: 14px
+    font-size: 15px
+    width: 139px
+    height: 47px
+
+  &-footer
+    list-style: none
+    display: flex
+    flex-wrap: wrap
+    gap: 10px
+    justify-content: space-between
+    align-items: center
+    padding: 47px 0
+
