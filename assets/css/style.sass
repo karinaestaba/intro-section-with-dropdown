@@ -48,9 +48,6 @@ a
     margin-left: 19px
 
 .main
-  &-header, &-content
-    max-width: 1220px
-
   &-header
     display: flex
     justify-content: space-between
@@ -199,6 +196,7 @@ a
   .cta-button
     display: inline-block
     background-color: $almost_black
+    border: 2px solid $almost_black
     color: white
     padding: 15px
     font-weight: 700
@@ -207,6 +205,12 @@ a
     font-size: 15px
     width: 139px
     height: 47px
+
+    &:hover
+      background-color: transparent
+      border-color: $almost_black
+      color: $almost_black
+      transition: all .5s
 
   &-footer
     list-style: none
@@ -244,3 +248,138 @@ a
   100%
     transform: translateX(0)
 	
+@media screen and ( min-width: 998px)
+  a
+    &.btn-login
+      padding: 9px 20px
+
+  #toggle-nav
+    + label
+      display: none
+
+  .main
+    &-content
+      max-width: 1220px
+      min-height: 91vh
+
+    &-header
+      padding: 22px 40px
+
+    &-menu
+      &-container
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        left: 0
+        position: initial
+        width: 100%
+        height: auto
+        align-items: center
+        justify-content: space-between
+        padding: 0 0 0 56px
+
+        ul
+          flex-direction: row
+          flex-wrap: wrap
+          
+          &.main-menu
+            margin-top: 0
+            align-items: center
+            gap: 33px
+
+            li
+              &:last-child
+                margin-left: 10px
+
+          &.menu-access
+            align-items: center
+            margin-top: 0
+            gap: 44px
+
+        li
+          font-size: 15px
+
+        a
+          font-size: 14px
+
+    &-content
+      display: grid
+      grid-template-columns: 1.4fr 1fr
+      grid-template-areas: "c-hero c-banner"
+      margin: 0 auto
+      align-items: center
+      gap: 31px
+
+      .banner
+        grid-area: c-banner
+
+        img
+          max-height: 100%
+
+      .hero
+        grid-area: c-hero
+        text-align: left
+
+  .menu
+    &-title
+      margin-left: 8px
+
+      &::after
+        margin-left: 9px
+
+  .banner
+    height: 90%
+    width: 97%
+
+  .hero
+    padding: 0 55px
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 4px
+
+    h1
+      font-size: 80px
+      line-height: 83px
+      white-space: pre-line
+      margin-top: 34px
+      margin-bottom: 5px
+
+    p
+      white-space: pre-line
+      margin-bottom: 36px
+      font-size: 18px
+      line-height: 29px
+      margin-top: 35px
+
+    .cta-button
+      width: 161px
+      height: 54px
+      text-align: center
+      margin-top: 10px
+      padding: 17px 15px 19px
+      font-size: 17px
+
+    &-footer
+      padding: 107px 0 0
+      gap: 36px
+      justify-content: start
+
+      li
+        &:nth-child(1)
+          img
+            width: 117px
+
+        &:nth-child(2)
+          img
+            width: 64px
+
+        &:nth-child(3)
+          img
+            width: 87px
+            margin-left: 15px
+
+        &:nth-child(4)
+          img
+            width: 94px
