@@ -38,6 +38,11 @@ a
 .overlay-menu
   display: none
 
+.menu-title
+  &::after
+    content: url('../images/icon-arrow-down.svg')
+    margin-left: 10px
+
 .main
   &-header, &-content
     max-width: 1220px
@@ -53,9 +58,6 @@ a
         display: block
 
   &-menu
-    &-close
-      align-self: end
-
     &-container
       display: none
       left: 200%
@@ -108,16 +110,42 @@ a
         text-decoration: none
         color: $medium_gray
 
-    &-open
-      &:focus
-        background: red
+    li
+      &:hover > ul, &:focus-within > ul, ul:hover
+        display: flex
+        animation: myAnim 1s ease 0s 1 normal forwards
 
-        ~ .main-menu-container
-          left: auto
-          right: 0
-          display: flex
+      &:hover
+        .menu-title
+          &::after
+            content: url('../images/icon-arrow-up.svg')
 
-        ~ .overlay-menu
+#toggle-nav
+  display: none
+
+  + label
+    display: block
+    width: 30px
+    height: 30px
+    z-index: 2
+    cursor: pointer
+
+    &::after
+      content: url('../images/icon-menu.svg')
+      z-index: 1
+      position: absolute
+
+  &:checked
+    + label
+      &::after
+        content: url('../images/icon-menu-open.svg')
+
+      + .main-menu-container
+        left: auto
+        right: 0
+        display: flex
+
+        + .overlay-menu
           display: block
           width: 100vw
           height: 100vh
@@ -128,19 +156,6 @@ a
           bottom: 0
           right: 0
           z-index: -1
-
-.menu-title
-  &::after
-    content: url('../images/icon-arrow-down.svg')
-    margin-left: 10px
-
-  &:focus
-    &::after
-      content: url('../images/icon-arrow-up.svg')
-
-    + .submenu
-      display: flex
-    
 
 .banner
   img
@@ -187,3 +202,27 @@ a
     align-items: center
     padding: 47px 0
 
+@keyframes myAnim 
+	0% 
+		opacity: 0
+		transform: rotateX(70deg)
+		transform-origin: top
+	
+
+	100% 
+		opacity: 1
+		transform: rotateX(0deg)
+		transform-origin: top
+	
+@keyframes myAnim2 
+	0% 
+		opacity: 0
+		transform: rotateX(-70deg)
+		transform-origin: bottom
+	
+
+	100% 
+		opacity: 1
+		transform: rotateX(0)
+		transform-origin: bottom
+	
