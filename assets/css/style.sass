@@ -277,6 +277,7 @@ a
         align-items: center
         justify-content: space-between
         padding: 0 0 0 56px
+        background: transparent
 
         ul
           flex-direction: row
@@ -287,10 +288,6 @@ a
             align-items: center
             gap: 33px
 
-            li
-              &:last-child
-                margin-left: 10px
-
           &.menu-access
             align-items: center
             margin-top: 0
@@ -298,9 +295,18 @@ a
 
         li
           font-size: 15px
+          position: relative
 
         a
           font-size: 14px
+
+      li
+        &:hover > ul, &:focus-within > ul, ul:hover
+          position: absolute
+          flex-direction: column
+          padding: 38px 30px 7px
+          gap: 14px
+          right: 0
 
     &-content
       display: grid
@@ -320,6 +326,20 @@ a
         grid-area: c-hero
         text-align: left
 
+  .submenu
+    &::before
+      content: ''
+      display: block
+      background: white
+      width: 100%
+      height: 100%
+      z-index: -1
+      position: absolute
+      right: 0
+      top: 17px
+      box-shadow: rgba(116, 124, 128, 0.12) 0px 2px 4px 0px, rgba(138, 139, 140, 0.32) 0px 2px 16px 0px, rgba(113, 113, 113, 0.25) 0px 25px 50px -12px
+      border-radius: 14px
+          
   .menu
     &-title
       margin-left: 8px
