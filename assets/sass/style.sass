@@ -221,16 +221,30 @@ a
     align-items: center
     padding: 47px 0
 
-@keyframes slideBottom
-	0% 
-		opacity: 0
-		transform: rotateX(70deg)
-		transform-origin: top
+.main-footer
+  text-align: center
+  padding: 0 10px 10px
+  font-size: 12px
+  line-height: 20px
 
-	100% 
-		opacity: 1
-		transform: rotateX(0deg)
-		transform-origin: top
+  a
+    text-decoration: none
+    color: $almost_black
+    white-space: nowrap
+
+    &:hover
+      color: lighten($almost_black, 20) 
+
+@keyframes slideBottom
+  0% 
+    opacity: 0
+    transform: rotateX(70deg)
+    transform-origin: top
+
+  100% 
+    opacity: 1
+    transform: rotateX(0deg)
+    transform-origin: top
 
 @keyframes swirlIn
   0%
@@ -247,7 +261,7 @@ a
 
   100%
     transform: translateX(0)
-	
+  
 @media screen and ( min-width: 998px)
   a
     &.btn-login
